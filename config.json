@@ -1,0 +1,5 @@
+{
+  "$schema": "./config.schema.json",
+  "blinkInterval": 130,
+  "useRoundedBorders": true
+}

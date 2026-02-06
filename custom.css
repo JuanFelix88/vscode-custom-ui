@@ -1,0 +1,94 @@
+body {
+  /* filter: contrast(0.90) saturate(0.60) hue-rotate(-6deg) !important; */
+}
+
+.cursor-smooth {
+  animation-duration: 0.105s !important;
+  animation-iteration-count: infinite !important;
+  animation-delay: 0ms !important;
+  animation-timing-function: step-end;
+  filter: brightness(1.2) !important;
+}
+
+.cursor-solid > .cursor {
+  /* transform: scaleY(0.9) !important; */
+  animation: new-editor-anim 0.25s 500ms linear forwards !important;
+}
+
+@keyframes new-editor-anim {
+  from {
+    background-color: #b180ff;
+  }
+
+  to {
+    background-color: #dddddd;
+  }
+}
+
+.monaco-editor .cursors-layer.cursor-smooth-caret-animation > .cursor {
+  transition:
+    left 30ms,
+    right 30ms,
+    top 15ms !important;
+  transform: scaleY(1.05) !important;
+}
+
+.core-guide.bracket-indent-guide.vertical::after {
+  content: "";
+  display: block;
+  height: 100%;
+  /* border-left: 2px dashed var(--vscode-editor-background) !important; */
+  border-left: 2px dashed var(--guide-color) !important;
+}
+
+.monaco-editor .vertical {
+  /* box-shadow: 1px 0 0 0 var(--guide-color) inset; */
+  box-shadow: unset;
+}
+
+* {
+  font-smooth: antialiased !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.editor-widget,
+div:has(>.monaco-hover),
+.monaco-hover/*,
+.markdown-hover,
+.monaco-resizable-hover,
+.hover-contents,
+.hover-row-contents*/ {
+  border-radius: 8px !important;
+}
+
+.editor-widget,
+.hover-contents,
+.hover-row-contents {
+  overflow: hidden !important;
+}
+
+.token-inspect-widget,
+.editor-widget,
+.hover-contents {
+  backdrop-filter: blur(12px) !important;
+}
+
+.codicon-session-in-progress {
+  animation: in-progress-anim 1100ms linear infinite !important;
+}
+
+@keyframes in-progress-anim {
+  0% {
+    transform: rotate(0deg);
+    opacity: 100%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+    transform: rotate(360deg);
+  }
+}

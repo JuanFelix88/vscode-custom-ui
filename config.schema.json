@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VSCode Custom UI Config",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "blinkInterval": {
+      "type": "number",
+      "default": 130,
+      "description": "Intervalo do blink em milissegundos."
+    },
+    "useRoundedBorders": {
+      "type": "boolean",
+      "default": true,
+      "description": "Ativa bordas arredondadas na UI."
+    }
+  }
+}
