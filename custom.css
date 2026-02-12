@@ -113,14 +113,31 @@ div:has(>.monaco-hover),
 
 /* Para o highlight de Range (busca/definição) */
 .monaco-editor .rangeHighlight {
-  animation: show-highlighted 125ms ease-out forwards !important;
-  transition: all 70ms ease-in !important;
+  animation: show-highlighted 90ms ease-out forwards !important;
+  transition: all 60ms ease-in !important;
+}
+
+.monaco-editor .cursor.block {
+  animation: cursor-one-pulse 105ms ease-out !important;
+}
+
+@keyframes cursor-one-pulse {
+  from {
+    transform: scaleX(1.7);
+    filter: brightness(1.3);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    filter: brightness(1);
+    opacity: 1;
+  }
 }
 
 @keyframes show-highlighted {
   from {
     transform: scale(1.3);
-    filter: brightness(1.2);
+    filter: brightness(1.3);
     opacity: 0;
   }
 
