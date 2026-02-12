@@ -30,7 +30,7 @@ body {
     left 30ms,
     right 30ms,
     top 15ms !important;
-  transform: scaleY(1.05) !important;
+  transform: scaleX(1.05) !important;
 }
 
 .core-guide.bracket-indent-guide.vertical::after {
@@ -91,4 +91,8 @@ div:has(>.monaco-hover),
     opacity: 100%;
     transform: rotate(360deg);
   }
+}
+
+.bg-token-input-background {
+  border-color: var(--vscode-focusBorder) !important;
 }

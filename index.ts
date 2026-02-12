@@ -13,16 +13,11 @@ const appData = path.resolve(process.env.APPDATA!, "..", "Local", "Programs");
 const installationRoots = [
   path.join(appData, "Microsoft VS Code"),
   path.join(appData, "Microsoft VS Code Insiders"),
+  path.join(appData, "Antigravity"),
 ];
 
 const excludedSubfolders = new Set(["bin"]);
-const workbenchRelative = path.join(
-  "resources",
-  "app",
-  "out",
-  "vs",
-  "workbench",
-);
+const workbenchRelative = path.join("app", "out", "vs", "workbench");
 const targetFiles = ["workbench.desktop.main.css", "workbench.desktop.main.js"];
 const customCssPath = path.resolve("custom.css");
 const customCssStart = "/* vscode-custom-ui:custom.css:start */";
