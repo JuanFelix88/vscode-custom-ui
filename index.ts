@@ -17,7 +17,13 @@ const installationRoots = [
 ];
 
 const excludedSubfolders = new Set(["bin"]);
-const workbenchRelative = path.join("app", "out", "vs", "workbench");
+const workbenchRelative = path.join(
+  "resources",
+  "app",
+  "out",
+  "vs",
+  "workbench",
+);
 const targetFiles = ["workbench.desktop.main.css", "workbench.desktop.main.js"];
 const customCssPath = path.resolve("custom.css");
 const customCssStart = "/* vscode-custom-ui:custom.css:start */";
@@ -129,7 +135,7 @@ async function processInstallation(root: string): Promise<number> {
   const subfolders = await listSubfolders(root);
   let changes = 0;
 
-  for (const sub of subfolders) {
+  for (const sub of [...subfolders, root]) {
     const workbenchDir = path.join(root, sub, workbenchRelative);
     if (!(await pathExists(workbenchDir))) continue;
 

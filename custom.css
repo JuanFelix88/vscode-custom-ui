@@ -10,7 +10,7 @@ body {
   filter: brightness(1.2) !important;
 }
 
-.cursor-solid > .cursor {
+.cursor-solid>.cursor {
   /* transform: scaleY(0.9) !important; */
   animation: new-editor-anim 0.25s 500ms linear forwards !important;
 }
@@ -25,7 +25,7 @@ body {
   }
 }
 
-.monaco-editor .cursors-layer.cursor-smooth-caret-animation > .cursor {
+.monaco-editor .cursors-layer.cursor-smooth-caret-animation>.cursor {
   transition:
     left 30ms,
     right 30ms,
@@ -55,11 +55,14 @@ body {
 
 .editor-widget,
 div:has(>.monaco-hover),
-.monaco-hover/*,
+.monaco-hover
+
+/*,
 .markdown-hover,
 .monaco-resizable-hover,
 .hover-contents,
-.hover-row-contents*/ {
+.hover-row-contents*/
+  {
   border-radius: 8px !important;
 }
 
@@ -84,9 +87,11 @@ div:has(>.monaco-hover),
     transform: rotate(0deg);
     opacity: 100%;
   }
+
   50% {
     opacity: 50%;
   }
+
   100% {
     opacity: 100%;
     transform: rotate(360deg);
@@ -95,4 +100,33 @@ div:has(>.monaco-hover),
 
 .bg-token-input-background {
   border-color: var(--vscode-focusBorder) !important;
+}
+
+.monaco-editor .wordHighlight {
+  animation: show-highlighted 125ms ease-out forwards !important;
+  border-radius: 2px !important;
+}
+
+.monaco-editor .hoverHighlight {
+  animation: show-highlighted 125ms ease-out forwards !important;
+}
+
+/* Para o highlight de Range (busca/definição) */
+.monaco-editor .rangeHighlight {
+  animation: show-highlighted 125ms ease-out forwards !important;
+  transition: all 70ms ease-in !important;
+}
+
+@keyframes show-highlighted {
+  from {
+    transform: scale(1.3);
+    filter: brightness(1.2);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    filter: brightness(1);
+    opacity: 1;
+  }
 }
