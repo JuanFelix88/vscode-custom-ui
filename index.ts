@@ -11,6 +11,7 @@ console.log(
 const appData = path.resolve(process.env.APPDATA!, "..", "Local", "Programs");
 
 const installationRoots = [
+  path.join("C:", "Program Files", "Microsoft VS Code Insiders"),
   path.join(appData, "Microsoft VS Code"),
   path.join(appData, "Microsoft VS Code Insiders"),
   path.join(appData, "Antigravity"),
